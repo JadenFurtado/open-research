@@ -170,5 +170,5 @@ The Juridical Recording Unit (JRU) is an event recorder, usually integrated with
 The Train Interface Unit (TIU) is the interface between the EVC and the train/locomotive, for submitting commands or receiving information.
 
 ==== Specific Transmission Modules
-A DMI operating in STM mode for PZB, a German Class B system
+
 A Specific Transmission Module (STM) is a special interface for the EVC that enables operation with one or more Class B ATP systems, such as PZB, MEMOR, or ATB. It consists of the hardware needed to link the specific sensors and receivers that pick up on-track and lineside signals from the legacy installation with the EVC, and the software that allows the EVC to emulate the processing functions that would be performed by the legacy system controller on a non-ETCS train. The information provided by the legacy system is then shown to the driver via the DMI. It is possible to fit an EVC with STMs for multiple legacy systems, as required
