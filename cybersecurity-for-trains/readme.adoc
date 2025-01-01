@@ -172,3 +172,12 @@ The Train Interface Unit (TIU) is the interface between the EVC and the train/lo
 ==== Specific Transmission Modules
 
 A Specific Transmission Module (STM) is a special interface for the EVC that enables operation with one or more Class B ATP systems, such as PZB, MEMOR, or ATB. It consists of the hardware needed to link the specific sensors and receivers that pick up on-track and lineside signals from the legacy installation with the EVC, and the software that allows the EVC to emulate the processing functions that would be performed by the legacy system controller on a non-ETCS train. The information provided by the legacy system is then shown to the driver via the DMI. It is possible to fit an EVC with STMs for multiple legacy systems, as required
+
+=== Protocols that are commonly used for communication between the various components
+
+Modern trains use a combination of CAN, TrainBUS, Ethernet, and MVB(Multifunction Vehicular Bus).
+
+.Various protocols and the way different components inter-communicate with each other
+image::https://www.railjournal.com/wp-content/uploads/2022/02/LocoTech-Signal_Image1.jpg[]
+
+I feel the need to do a deep dive into the communication protocols that are commonly used by trains at a later point in time.

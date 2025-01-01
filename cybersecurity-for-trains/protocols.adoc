@@ -1,8 +1,0 @@
-
-=== Protocols that are commonly used for communication between the various components
-
-Modern trains use a combination of CAN, TrainBUS, Ethernet, and MVB(Multifunction Vehicular Bus).
-
-.Various protocols and the way different components inter-communicate with each other
-image::https://www.railjournal.com/wp-content/uploads/2022/02/LocoTech-Signal_Image1.jpg[]
-
