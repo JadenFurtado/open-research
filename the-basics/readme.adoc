@@ -1,0 +1,16 @@
+== The Basics
+
+Here I speak about the basics!
+
+=== The Debugger
+
+The debugger is the most sacred of tools to the cybersecurity researcher. Too many researchers do not realize the potential that is hidden behind this tool. Too many do not dig far enough to understand what is possible with this tool!
+It is like a magnifying glass, allowing you to zoom into things and view them in their detail. It is also like an x-ray machine, allowing you to cut through everything that is going on in the application. It is also like a time-machine, allowing you to go through various scenarios without having to restart things from the start, and allowing you to make changes on the fly.
+
+This is the true potential of a debugger.
+
+=== Launching a debugger
+
+Launching a debugger is fairly easy in modern IDEs and code editors.
+I am using VS-Code to write this work.
+

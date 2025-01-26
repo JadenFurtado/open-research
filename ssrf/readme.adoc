@@ -1,0 +1,22 @@
+= SSRFs
+
+Server-side request forgery (SSRF) is a security vulnerability that allows an attacker to trick a server into making unintended requests to internal or external resources: 
+
+How it works: An attacker manipulates a web application or API to make requests to internal resources. This can happen when an application doesn't validate or sanitize a URL input before pulling data from a remote resource. 
+
+*Consequences:* SSRF can lead to: 
+
+Unauthorized access 
+
+* Data exposure 
+* System compromise 
+* Remote code execution 
+*  Access to internal systems 
+* Extraction of sensitive data 
+* Further attacks within the organization's network 
+
+*Prevention:* A quick fix is to sanitize user data in calls to other servers. 
+
+SSRF is a severe vulnerability that's regularly discovered and may appear in all networked software. It's listed as CWE-918 in the Common Weakness Enumeration, a community-developed list of software and hardware weaknesses. 
+
+

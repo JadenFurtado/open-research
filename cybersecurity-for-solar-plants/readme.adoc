@@ -1,0 +1,82 @@
+= Cybersecurity for Solar Plants
+
+Let us talk about the cybersecurity of Solar Plants :)
+
+NOTE: I don't claim to know everything there is know about these things, but I can certainly provide some insights.
+
+== How do Solar Plants work?
+
+Well, the simple answer is that they convert solar energy to electric energy. Well, we aren't here for the simple answer are we? :)
+
+The high level architecture of Solar plants can be described as shown in the below image
+
+.High level architecture of Solar Plants
+image::https://www.researchgate.net/publication/342957342/figure/fig1/AS:913582711635970@1594826500294/General-Architecture-of-Solar-Monitoring-System.jpg[]
+
+
+=== PV Blocks
+
+A PV Block in a solar plant is a collection of PV arrays.
+
+image::https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0F26Rsr8pet3U9fvxcQSumCdKVL-KFW8ju2QY8KsQJWqgadbQNelQ91MUTokoMSL4twK1bIjCANdiMCqDl3Ep5xF4lerTkdMt4FJaK6uoGei83NlPvJBZC_wm8Y4XIkRUm1MsLZQJP2k/s16000/ezgif-4-8ed37c30bb31.webp[]
+
+=== String Combiner
+
+The outputs of PV arrays within a single block are combined into a single output by a string combiner. These boxes can be found next to PV blocks.
+
+.The white box houses a single String Combiner
+image::https://www.sma-sunny.com/wp-content/uploads/2015/06/String-Combiner-1.jpg[]
+
+=== String Inverter
+
+The output of Solar cells is DC current. However, for the purposes of transmission, this DC current needs to be converted into AC current. This is achieved using string inverters.
+
+=== ACCB(AC Combiner Box)
+
+As the name suggests, the AC Combiner box is what is used to combine multiple AC current inputs into a single AC Current output.
+
+=== SCADA
+
+SCADA is the supervisory control and Data acquisition system that is used by the operators of the solar plant to ensure that the plant operates in a safe manner.
+
+== Communication Protocols
+
+Most subsystems within solar power plants speak ModBus. The systems within the control room however need to transmit this ModBus data over IP networks. For this purposes, ModBus Serial to TCP Converter is used. When the attacks on the grid took place in Ukraine back in 2015, and 2016, this is what the attackers wiped. This is why the plant operators were unable to restart the grid right after they took back control over their plants. Because the firmware  itself had been wiped, there was no way to communicate with the equipment in the field.
+
+.An example of a modbus serial to ethernet converter
+image::https://m.media-amazon.com/images/I/61qpnW+zxhL.jpg[]
+
+If the solar plant needs to communicate with substations, then it is possible that the IEC61850 protocol suite might also be used.
+
+image::https://i.ytimg.com/vi/rFNbI6RkNFI/maxresdefault.jpg[]
+
+IEC61860 consists of three protocols:
+
+* GOOSE
+* MMS
+* SV
+
+== Things to look for once inside a power plant
+
+There are a bunch of things which you need to look out for.
+
+=== Default passwords!
+
+Default passwords are the easiest way for an external attacker to compromise a power plant.
+During our field audits, we have come across tons of field equipment running default passwords.
+
+=== Outdate firmware
+
+There is plenty of research that is available on the security vulnerabilities within the software that runs this equipment. Many a times, it is not uncommon to see firmware running on devices that is 4-5 years old. I don't put the blame on the operators. Honestly, I don't put the blame on the manufacturers or the solution integrators either! This a problem that still needs a solution!
+
+Upgrading software in a live environment is risky!
+It costs mony for a plant operator, and the manufacturer to keep rolling out new pieces of software.
+Also, when you know a particular piece of software gets the job done, and has all kinks ironed out, would you really want to change it?
+
+=== Misconfigured plant networks
+
+It is important that plant operators segregate the network of their power plants correctly.
+We have seen many  plants where the network within the plant is misconfigure to the point where traffic within the guest WiFi network is able to route to the OT network.
+In some weird cases, we have seen that the ISP themselves have setup the network incorrectly!
+
+This leads to crazy scenarios where it is possible to route to devices on the ISP network from within the plants network, even though the IPs of those devices owned by the ISP have been assigned a private IP address, and so, should not be reachable from within the plant network.
